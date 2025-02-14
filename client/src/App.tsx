@@ -4,16 +4,12 @@ import { Login, Signup } from "./pages";
 import Home from "./pages/Home";
 import PricingPage from "./pages/PricingPage";
 import {
-  QueryClient,
-  QueryClientProvider,
   useQuery,
 } from "@tanstack/react-query";
 import Navbar from "./components/Navbar";
 import axios from "axios";
-import React from "react";
 
 function App() {
-  // const queryClient = new QueryClient();
   const { data: user, refetch: refetchData } = useQuery({
     queryKey: ["currentUser"],
     queryFn: async () => {

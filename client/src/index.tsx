@@ -3,7 +3,6 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
-import { BrowserRouter, useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import {
   MutationCache,
@@ -13,7 +12,6 @@ import {
 } from "@tanstack/react-query";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
-import React from "react";
 
 const queryClient = new QueryClient({
   queryCache: new QueryCache({
@@ -67,10 +65,10 @@ const queryClient = new QueryClient({
 });
 
 createRoot(document.getElementById("root")!).render(
-  // <StrictMode>
-  <QueryClientProvider client={queryClient}>
-    <App />
-    <ToastContainer />
-  </QueryClientProvider>
-  // </StrictMode>
+  <StrictMode>
+    <QueryClientProvider client={queryClient}>
+      <App />
+      <ToastContainer />
+    </QueryClientProvider>
+  </StrictMode>
 );

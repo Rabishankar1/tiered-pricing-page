@@ -1,7 +1,6 @@
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { UserInterface } from "../constants";
 import { useNavigate } from "react-router-dom";
-import React from "react";
 
 const Home = ({ user }: { user: UserInterface }) => {
   console.log(user, "user");
@@ -90,7 +89,6 @@ const Home = ({ user }: { user: UserInterface }) => {
       <div className="home_page flex rounded-2xl flex-col items-center justify-center min-h-screen bg-gray-50 dark:bg-gray-900 p-6">
         {renderContent()}
       </div>
-      <ToastContainer />
     </>
   );
 };
