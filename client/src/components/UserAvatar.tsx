@@ -3,6 +3,7 @@ import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 
 const UserAvatar = ({ user }: any) => {
+  //@ts-ignore
   const [cookies, setCookie, removeCookie] = useCookies(["token"]);
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
