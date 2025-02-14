@@ -24,7 +24,7 @@ const PricingPage = ({
   const { data, isLoading, error } = useQuery<Plan[]>({
     queryKey: ["pricing"],
     queryFn: async () => {
-      const response = await axios.get("http://localhost:4000/api/pricing", {
+      const response = await axios.get(`${import.meta.env.VITE_SERVER_DOMAIN}/api/pricing`, {
         withCredentials: true,
       });
       return response.data;
